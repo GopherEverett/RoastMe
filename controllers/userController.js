@@ -9,7 +9,7 @@ const userController = {
         })
     },
     new: (req,res) => {
-        res.send('New Form')
+        res.render('users/new')
     },
     create: (req,res) => {
         res.send('New User')
