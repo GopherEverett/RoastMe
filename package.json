@@ -1,0 +1,30 @@
+{
+  "name": "roastme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GopherEverett/RoastMe.git"
+  },
+  "author": "John A. Jacobs",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "hbs": "^4.0.2",
+    "mongoose": "^5.4.15",
+    "method-override": "^2.3.9",
+    "nodemon": "^1.11.0",
+    "body-parser": "^1.17.2"
+  },
+  "bugs": {
+    "url": "https://github.com/GopherEverett/RoastMe/issues"
+  },
+  "homepage": "https://github.com/GopherEverett/RoastMe#readme"
+}
