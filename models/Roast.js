@@ -12,7 +12,10 @@ const Roast = new Schema ({
       type: Schema.Types.ObjectId,
       ref: "User"
     },
-    jabs: [Jab]
+    jabs: [{
+        type: Schema.Types.ObjectId,
+        ref: "Jab"
+    }]
 });
 module.exports = mongoose.model('Roast', Roast)
 

@@ -1,12 +1,13 @@
 <div class="container">
-    <h2>Choose user to roast</h2>
+    <h2>Choose Someone to Roast</h2>
     {{#each users}}
     <div>
         <img src="{{imgLink}}">
     </div>
-    <div class="col-sm-6">
+    <div class="">
         <h4>
-            <a href="/{{id}}">{{name}}</a>
+            <a href="/{{id}}">{{userName}}</a>
         </h4>
     </div>
+    {{/each}}
 </div>

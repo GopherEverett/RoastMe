@@ -1,7 +1,12 @@
+const User = require('../models/User')
 
 const userController = {
     index: (req,res) => {
-        res.send('Index Page')
+        User.find()
+        // .populate('roasts')
+        .then(users => {
+            res.render('index',{users})
+        })
     },
     new: (req,res) => {
         res.send('New Form')
