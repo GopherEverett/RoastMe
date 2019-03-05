@@ -12,17 +12,16 @@ const userController = {
         res.render('users/new')
     },
     create: (req,res) => {
-        res.send('New User')
+        User.create(req.body).then(user => {
+            res.redirect('/')
+        })
     },
     show: (req,res) => {
-        res.send('User #1')
+       User.findById(req.params.userId).then(user => {
+           res.render('users/show', {user})
+       })
     },
-    edit: (req,res) => {
-        res.send('form to edit user')
-    },
-    update: (req,res) => {
-        res.send('updated user')
-    },
+    
     delete: (req,res) => {
         res.send('deleted user')
     }

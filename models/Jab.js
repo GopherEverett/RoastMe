@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 const Jab = new Schema ({
     content: String,
-    author: {
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        }
+    createdOn: {
+        type: Date,
+        default: Date.now()
+    }
 });
 
 module.exports = mongoose.model('Jab', Jab)

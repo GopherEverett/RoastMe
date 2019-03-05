@@ -4,10 +4,12 @@ const roastController = {
         res.send('Index Page  for roasts')
     },
     new: (req,res) => {
-        res.send('New Form for roast')
+        res.render('roasts/new')
     },
     create: (req,res) => {
-        res.send('New Roast')
+        Roast.create(req.body).then(user => {
+            res.redirect('/')
+        })
     },
     show: (req,res) => {
         res.send('Roast #1')

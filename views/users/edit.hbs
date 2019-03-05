@@ -1,0 +1,13 @@
+<form action="/{{user.id}}?_method=PUT" method="POST">
+    <h2>{{user.userName}}</h2>
+    <div>
+        <label for="userName">User Name</label>
+        <input type="text" name="userName" id="userName" value="{{user.userName}}">
+    </div>
+    
+    <div>
+        <label for="imgLink">Image Link</label>
+        <input type="text" name="imgLink" id="imgLink" value="{{user.imgLink}}">
+    </div>
+    <input type="submit" value="Submit">
+</form>

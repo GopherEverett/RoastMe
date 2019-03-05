@@ -1,0 +1,32 @@
+<div>
+    <img src="{{user.imgLink}}" alt="">
+</div>
+<div>
+    <h2>{{user.userName}}</h2>
+</div>
+<div>
+    <a href="/roasts/new">Add a Roast</a>
+</div>
+<div>
+    {{#if roasts}}
+    <ul class="roasts">
+        {{#each roast}}
+        <div class="">
+            <div class="content">
+                <a class="title" href="/roast/{{id}}">
+                    {{ content }}
+                </a>
+            </div>
+            <div class="card-action">
+                <a href="/user/{{ author.id }}" class="">{{ author.local.userName }}</a>
+                <span class="roast__date">{{ createdAt }}</span>
+                <span class="roast_comments">{{ jabs.length }} Roasts</span>
+            </div>
+        </div>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>
+<div>
+   
+</div>
