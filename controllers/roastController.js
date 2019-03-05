@@ -8,7 +8,10 @@ const roastController = {
         res.send('Index Page  for roasts')
     },
     new: (req, res) => {
-        res.render('roasts/new', { userId: req.params.userId })
+        User.findById(req.params.userId)
+        .then((user) => {
+            res.render('roasts/new', { user })
+        })
     },
     create: (req, res) => {
         User.findById(req.params.userId)
@@ -21,8 +24,9 @@ const roastController = {
             })
     },
     show: (req, res) => {
-        Roast.findById(req.params.roastId)
+        Roast.findById(req.params.roastId).populate("jabs")
        .then((roast) => {
+           console.log(roast)
            res.render('roasts/show', {roast})
        })
     },

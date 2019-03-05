@@ -28,7 +28,15 @@ User.deleteMany()
         author: nick._id
       }).then(roast => {
         nick.roasts.push(roast)
+        console.log(roast)
+        const jabTest = Jab.create({
+            content: "This is a jab"
+        }).then((jab) => {
+            roast.jabs.push(jab)
+            roast.save()
+        })
     })
+    
 
     return Promise.all([roast1Promise, roast2Promise]).then(() => {
         nick.save()
