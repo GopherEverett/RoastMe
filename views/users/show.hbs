@@ -9,7 +9,7 @@
 </div>
 <div>
     {{#each user.roasts}}
-    <p>{{content}}</p>
+    <a href="/{{../user._id}}/roasts/{{id}}"><p>{{content}}</p></a>
     <p>{{createdOn}}</p>
     {{/each}}
 </div>

@@ -14,7 +14,7 @@ const userController = {
     },
     create: (req,res) => {
         User.create(req.body).then(() => {
-            res.redirect('/')
+            res.redirect('/user')
         })
     },
     show: (req,res) => {

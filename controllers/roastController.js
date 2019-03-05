@@ -16,12 +16,15 @@ const roastController = {
                 Roast.create(req.body).then(roast => {
                     user.roasts.push(roast)
                     user.save()
-                    res.redirect(`/${req.params.userId}`)
+                    res.redirect(`/user/${req.params.userId}`)
                 })
             })
     },
     show: (req, res) => {
-        res.send('Roast #1')
+        Roast.findById(req.params.roastId)
+       .then((roast) => {
+           res.render('roasts/show', {roast})
+       })
     },
     delete: (req, res) => {
         res.send('deleted Roast')
