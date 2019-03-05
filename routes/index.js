@@ -1,8 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const appController = require('../controllers/appController')
 const userController = require('../controllers/userController.js')
 const roastController = require('../controllers/roastController.js')
 const jabController = require('../controllers/jabController.js')
+
+//App route
+router.get('/', appController.index)
 //User routes
 router.get('/user', userController.index)
 router.get('/user/new', userController.new)

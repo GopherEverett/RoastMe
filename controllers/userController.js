@@ -6,7 +6,7 @@ const userController = {
         User.find()
         // .populate('roasts')
         .then(users => {
-            res.render('index',{users})
+            res.render('users/index',{users})
         })
     },
     new: (req,res) => {
