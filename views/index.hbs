@@ -1,5 +1,5 @@
 <div class="container">
-    <a class="btn btn-info" href="./users/new.hbs">Want to be roasted? </a>
+    <a class="btn btn-info" href="/new">Want to be roasted? </a>
     <h2>Click picture to see Roasts</h2>
     {{#each users}}
     <div>
@@ -11,7 +11,7 @@
         <h4>
             {{userName}}
         </h4>
-        <p>{{roasts.length}} Roasts</p>
+        <p> Has {{roasts.length}} Roasts</p>
     </div>
     {{/each}}
 </div>

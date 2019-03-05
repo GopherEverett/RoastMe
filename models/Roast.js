@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 
 const Roast = new Schema ({
-    content: String,
+    content: {
+        type: String,
+        maxlength: 139
+    },
     createdOn: {
       type: Date,
       default: Date.now()

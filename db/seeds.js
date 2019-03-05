@@ -1,35 +1,38 @@
 const mongoose = require("./connection.js");
 const User = require("../models/User.js");
-const Roast = require("../models/Roast.js");
+const  Roast = require("../models/Roast.js");
 const Jab = require("../models/Jab.js")
 
-const firstJab = new Jab({
-    content: "Your Mother is crazy"
-})
-Jab.deleteMany({})
-    .then(() => Jab.create())
-    .then(() => firstJab.save())
 
-const firstRoast = new Roast({
-    content: "you are crazy",   
-})
+User.deleteMany()
+  .then(() => {
+    return Roast.deleteMany()
+  })
+  .then(() => {
+    return User.create({
+      userName: 'Nick Cage',
+      email: "nickcage@test.com",
+      password: "wuierhfkuwy",
+      imgLink: 'https://www.placecage.com/200/300',
+    })
+  })
+  .then(nick => {
+    const roast1Promise = Roast.create({
+      content: "You are bananas",
+      author: nick._id
+    }).then(roast => {
+      nick.roasts.push(roast)
+    })
+    const roast2Promise = Roast.create({
+        content: "Your hair is going.",
+        author: nick._id
+      }).then(roast => {
+        nick.roasts.push(roast)
+    })
 
-Roast.deleteMany({})
-    .then(() => Roast.create())
-    .then(() => firstRoast.save())
+    return Promise.all([roast1Promise, roast2Promise]).then(() => {
+        nick.save()
+      })
+    })
 
-const nick = new User({
-    userName: 'Nick Cage',
-    email: "nickcage@test.com",
-    password: "wuierhfkuwy",
-    imgLink: 'https://www.placecage.com/200/300',
-    roasts: []
-})
-
-User.deleteMany({})
-    .then(() => User.create())
-    .then(() => nick.save())
-    // .then(() => roastOne.save())
-    .then(() => console.log('nick'))
-    .then(() => mongoose.connection.close())
-    .catch(err => console.log(err, "error!"))
+    

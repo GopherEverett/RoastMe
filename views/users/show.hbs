@@ -5,12 +5,20 @@
     <h2>{{user.userName}}</h2>
 </div>
 <div>
-    <a href="/roasts/new">Add a Roast</a>
+    <a href="/{{user._id}}/roasts/new">Add a Roast</a>
 </div>
 <div>
-    {{#if roasts}}
-    <ul class="roasts">
-        {{#each roast}}
+    {{#each user.roasts}}
+    <p>{{content}}</p>
+    <p>{{createdOn}}</p>
+    {{/each}}
+
+
+
+
+    {{!-- {{#if roasts}}
+    <ul class="roasts"> --}}
+        {{!-- {{#each roast}}
         <div class="">
             <div class="content">
                 <a class="title" href="/roast/{{id}}">
@@ -23,9 +31,9 @@
                 <span class="roast_comments">{{ jabs.length }} Roasts</span>
             </div>
         </div>
-        {{/each}}
-    </ul>
-    {{/if}}
+        {{/each}} --}}
+    {{!-- </ul>
+    {{/if}} --}}
 </div>
 <div>
    

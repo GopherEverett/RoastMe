@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const Roasts = require('../models/Roast')
 
 const userController = {
     index: (req,res) => {
@@ -12,18 +13,22 @@ const userController = {
         res.render('users/new')
     },
     create: (req,res) => {
-        User.create(req.body).then(user => {
+        User.create(req.body).then(() => {
             res.redirect('/')
         })
     },
     show: (req,res) => {
-       User.findById(req.params.userId).then(user => {
+       User.findById(req.params.userId).populate('roasts')
+       .then(user => {
            res.render('users/show', {user})
        })
     },
     
     delete: (req,res) => {
-        res.send('deleted user')
+        User.findByIdAndDelete(req.params.userId).then(() => {
+            console.log(`deleted ${req.params.userId}`)
+            res.redirect('/')
+            })
     }
 }
 module.exports = userController 
