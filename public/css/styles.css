@@ -1,0 +1,12 @@
+#banner { 
+    background-color: darkgray;
+}
+a  {
+    text-decoration: none !important;
+}
+a:hover {
+    color: orange !important;
+}
+#top {
+    color: white;
+} 

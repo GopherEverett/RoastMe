@@ -1,15 +1,19 @@
-<div>
-    <img src="{{user.imgLink}}" alt="">
-</div>
-<div>
-    <h2>{{user.userName}}</h2>
-</div>
-<div>
-    <a class="btn btn-info" href="/{{user._id}}/roasts/new">Add a Roast</a>
-</div>
-<div>
-    {{#each user.roasts}}
-    <a href="/{{../user._id}}/roasts/{{id}}"><p>{{content}}</p></a>
-    <p>{{createdOn}}</p>
-    {{/each}}
+<div class="container">
+    <div>
+        <img src="{{user.imgLink}}" alt="">
+    </div>
+    <div>
+        <h2>{{user.userName}}</h2>
+    </div>
+    <div>
+        <a class="btn btn-dark" href="/{{user._id}}/roasts/new">Add a Roast</a>
+    </div>
+    <div>
+        {{#each user.roasts}}
+        <a href="/{{../user._id}}/roasts/{{id}}">
+            <p>{{content}}</p>
+        </a>
+        <p>{{createdOn}}</p>
+        {{/each}}
+    </div>
 </div>
