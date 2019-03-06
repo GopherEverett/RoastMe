@@ -2,16 +2,18 @@
     <a class="btn btn-dark" href="user/new">Want to be roasted? </a>
     <h2>Click picture to see Roasts</h2>
     {{#each users}}
-    <div>
-        <a href="user/{{id}}">
-            <img src="{{imgLink}}">
-        </a>
-    </div>
-    <div class="">
-        <h4>
-            {{userName}}
-        </h4>
-        <p> Has {{roasts.length}} Roasts</p>
+    <div class="card" style="width: 18rem;">
+        <div class="card-img-top">
+            <a href="user/{{id}}">
+                <img src="{{imgLink}}">
+            </a>
+        </div>
+        <div class="card-body">
+            <h4>
+                {{userName}}
+            </h4>
+            <p> Has {{roasts.length}} Roasts</p>
+        </div>
     </div>
     {{/each}}
 </div>

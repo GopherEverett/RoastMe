@@ -18,19 +18,19 @@ User.deleteMany()
   })
   .then(nick => {
     const roast1Promise = Roast.create({
-      content: "You are bananas",
+      content: "You look like the lovechild of Nick Cage and Nick Cage.",
       author: nick._id
     }).then(roast => {
       nick.roasts.push(roast)
     })
     const roast2Promise = Roast.create({
-        content: "Your hair is going.",
+        content: "I am just glad he was never in the Godfather. -Francis Ford Coppola",
         author: nick._id
       }).then(roast => {
         nick.roasts.push(roast)
         console.log(roast)
         const jabTest = Jab.create({
-            content: "This is a jab"
+            content: "Even his uncle knows he sucks."
         }).then((jab) => {
             roast.jabs.push(jab)
             roast.save()

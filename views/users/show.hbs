@@ -10,10 +10,15 @@
     </div>
     <div>
         {{#each user.roasts}}
-        <a href="/{{../user._id}}/roasts/{{id}}">
-            <p>{{content}}</p>
-        </a>
-        <p>{{createdOn}}</p>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <a href="/{{../user._id}}/roasts/{{id}}">
+                    <h3>{{content}}</h3>
+                </a>
+                <p>{{createdOn}}</p>
+                <p> Has {{jabs.length}} Jabs</p>
+            </div>
+        </div>
         {{/each}}
     </div>
 </div>

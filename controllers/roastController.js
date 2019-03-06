@@ -26,7 +26,6 @@ const roastController = {
     show: (req, res) => {
         Roast.findById(req.params.roastId).populate("jabs")
        .then((roast) => {
-           console.log(roast)
            res.render('roasts/show', {roast})
        })
     },

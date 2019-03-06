@@ -1,7 +1,13 @@
 <div class="container">
     <h2>{{../user.userName}}</h2>
-<h2>{{roast.content}}</h2>
-{{#each roast.jabs}}
-    {{content}}
-{{/each}}
+    <h2>{{roast.content}}</h2>
+    <a href="" class="btn btn-dark">Delete</a>
+    <a href="" class="btn btn-danger">Add a Jab</a>
+</div><br>
+
+<div class="container">
+    <h3>Jabs:</h3>
+    {{#each roast.jabs}}
+    <h5>{{content}}</h5>
+    {{/each}}
 </div>
