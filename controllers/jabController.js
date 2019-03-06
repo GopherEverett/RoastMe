@@ -18,7 +18,7 @@ const jabController = {
             Jabs.create(req.body).then(jab => {
                 roast.jabs.push(jab)
                 roast.save()
-                res.redirect('/user')
+                res.redirect(`/${req.params.roastId}/jabs/${jab._id}`)
             })  
         })
     },
@@ -29,10 +29,15 @@ const jabController = {
         })
     },
     edit: (req,res) => {
-        res.render('jabs/edit')
+        Jabs.findById(req.params.jabId).then(jab => {
+        res.render('jabs/edit', {jab})
+        })   
     },
     update: (req,res) => {
-        res.send('updated Jab')
+        Jabs.findByIdAndUpdate(req.params.jabId, req.body, {new: true}).then((update) =>{
+            console.log(update)
+            // res.redirect(`/${req.params.jabId}`)
+        })
     },
     delete: (req,res) => {
         Jabs.findByIdAndDelete(req.params.jabId).then(() => {
