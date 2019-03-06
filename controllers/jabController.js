@@ -1,10 +1,21 @@
+const User = require('../models/User')
+const Roast = require('../models/Roast')
+const Jabs = require('../models/Jab')
 
 const jabController = {
     index: (req,res) => {
         res.send('Jabs')
     },
     new: (req,res) => {
-        res.send('New Form for jab')
+        Roast.findById(req.params.roastId)
+        .then((roast) =>{
+            res.render('jabs/new', {roast})
+        })
+        
+        // Roast.findById(req.params.roastId)
+        // .then((roast) => {
+        //     res.render('roasts/new', { roast })
+        // })
     },
     create: (req,res) => {
         res.send('New Jab')
