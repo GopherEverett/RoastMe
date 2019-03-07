@@ -28,7 +28,6 @@ User.deleteMany()
         author: nick._id
       }).then(roast => {
         nick.roasts.push(roast)
-        console.log(roast)
         const jabTest = Jab.create({
             content: "Even his uncle knows he sucks."
         }).then((jab) => {
