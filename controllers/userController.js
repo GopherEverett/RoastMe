@@ -24,11 +24,11 @@ const userController = {
        })
     },
     
-    delete: (req,res) => {
-        User.findByIdAndDelete(req.params.userId).then(() => {
-            console.log(`deleted ${req.params.userId}`)
-            res.redirect('/')
-            })
-    }
+    // delete: (req,res) => {
+    //     User.findByIdAndDelete(req.params.userId).then(() => {
+    //         console.log(`deleted ${req.params.userId}`)
+    //         res.redirect('/')
+    //         })
+    // }
 }
 module.exports = userController 

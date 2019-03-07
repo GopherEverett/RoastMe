@@ -1,7 +1,6 @@
 <div class="container">
-    <h2>{{jab.content}}</h2>
-    <form class="delete-form" action="{{jab._id}}?_method=DELETE" method="POST">
-        <input class="action-btn btn btn-danger" type="submit" value="DELETE">
-    </form><br>
-    <a href="{{jab._id}}/edit" class="btn btn-info"> EDIT </a>
+    <div class="card text-center">
+        <h2>{{jab.content}}</h2>
+        <h5>{{jab.createdOn}}</h5>
+    </div>
 </div>

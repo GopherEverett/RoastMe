@@ -9,6 +9,9 @@ User.deleteMany()
     return Roast.deleteMany()
   })
   .then(() => {
+    return Jab.deleteMany()
+  })
+  .then(() => {
     return User.create({
       userName: 'Nick Cage',
       email: "nickcage@test.com",

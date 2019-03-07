@@ -36,28 +36,35 @@ const roastController = {
         })
     },
     update: (req, res) => {
-        User.findById(req.params.userId)
-            .then((user) => {
-                Roast.findByIdAndUpdate(req.params.roastId, req.body, { new: true }).then((roast) => {
-                    console.log(user)
-                    user.roasts.push(roast)
-                    user.save()
-                    res.redirect(`roasts/${req.params.roastId}`)
-                })
-            })
+       Roast.findByIdAndUpdate(req.params.roastId, req.body, { new: true }).then(() => {
+           console.log(req.params.roastId)
+           res.redirect(`/user/${req.params.userId}`)
+       })
+       
+       
+        // User.findById(req.params.userId)
+        //     .then((user) => {
+        //         Roast.findByIdAndUpdate(req.params.roastId, req.body, { new: true }).then((roast) => {
+        //             user.roasts.push(roast)
+        //             user.save()
+        //             console.log(user)
+        //             res.redirect(`/user/${req.params.userId}`)
+        //         })
+        //     })
     },
     delete: (req, res) => {
         User.findById(req.params.userId).then((user) => {
-            user.roasts.map((roast, index) => {
-                return roast == req.params.roastId ? user.roasts.splice(index, 1) : null
-            })
+            // user.roasts.map((roast, index) => {
+            //     return roast == req.params.roastId ? user.roasts.splice(index, 1) : null
+            // })
+            user.roasts.filter(roastId => roastId !== req.params.roastId)
             user.save()
         })
-        .then(() => {
-            Roast.findByIdAndDelete(req.params.roastId).then(() => {
-                console.log(`deleted ${req.params.roastId}`)
+            .then(() => {
+                Roast.findByIdAndDelete(req.params.roastId).then(() => {
+                    res.redirect(`/user/${req.params.userId}`)
+                })
             })
-        })
     }
 }
 

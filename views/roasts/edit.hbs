@@ -1,13 +1,22 @@
 <div class="container">
+    <div class="row">
+        <div class="col">
 
-    <form action="{{userId}}/roasts/{{roast._id}}?_method=PUT" method="POST">
-        <div>
-            <label for="">Update this Roast</label>
         </div>
-        <div>
+        <div class="col-8">
+            <form action="/{{userId}}/roasts/{{roast._id}}?_method=PUT" method="POST">
+                <div>
+                    <label for="">Update this Roast</label>
+                </div>
+                <div>
 
-            <input class="form-control" type="text" name="roast" id="roast" value="{{roast.content}}">
+                    <input class="form-control" type="text" name="content" id="roast" value="{{roast.content}}">
+                    <input type="submit" value="UPDATE" class="btn btn-danger">
+                </div>
+            </form>
         </div>
-        <input type="submit" value="UPDATE" class="btn btn-danger">
-    </form>
+        <div class="col">
+
+        </div>
+    </div>
 </div>

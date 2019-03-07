@@ -1,19 +1,32 @@
 <div class="container">
-    <a class="btn btn-dark" href="user/new">Want to be roasted? </a>
-    <h2>Click picture to see Roasts</h2>
-    {{#each users}}
-        <div class="card-img-top">
-            <a href="user/{{id}}">
-                <img src="{{imgLink}}">
-            </a>
+    <div class="row">
+        <div class="col text-center">
+            <div>
+                <a class="btn btn-dark" href="user/new">Want to be roasted? </a>
+            </div>
         </div>
-    <div class="card" style="width: 30rem;">
-        <div class="card-body">
-            <h4>
-                {{userName}}
-            </h4>
-            <p> Has {{roasts.length}} Roasts</p>
+        <div class="col text-center">
+                <h2>Click picture to see Roasts</h2>
+            {{#each users}}
+            <div class="">
+                <div class="card-img-top">
+                    <a href="user/{{id}}">
+                        <img src="{{imgLink}}">
+                    </a>
+                </div>
+                <div class="card text-center" style="width: 30rem;">
+                    <div class="card-body">
+                        <h4>
+                            {{userName}}
+                        </h4>
+                        <p> Has {{roasts.length}} Roasts</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
         </div>
+        <div class="col">
+        </div>
+
     </div>
-    {{/each}}
 </div>

@@ -1,24 +1,35 @@
 <div class="container">
-    <div>
-        <a href="/user"><img src="{{user.imgLink}}" alt=""></a>
-    </div>
-    <div>
-        <h2>{{user.userName}}</h2>
-    </div>
-    <div>
-        <a class="btn btn-dark" href="/{{user._id}}/roasts/new">Add a Roast</a>
-    </div>
-    <div>
-        {{#each user.roasts}}
-        <div class="card" style="width: 30rem;">
-            <div class="card-body">
-                <a href="/{{../user._id}}/roasts/{{id}}">
-                    <h3>{{content}}</h3>
-                </a>
-                <p>{{createdOn}}</p>
-                <p> Has {{jabs.length}} Jabs</p>
+    <div class="row">
+        <div class="col">
+            <div>
+                <a class="btn btn-dark" href="/{{user._id}}/roasts/new">Add a Roast</a>
+            </div>
+
+        </div>
+        <div class="col text-center">
+
+            <div>
+                <a href="/user"><img src="{{user.imgLink}}" alt=""></a>
+            </div>
+            <div>
+                <h2>{{user.userName}}</h2>
+            </div>
+            <div>
+                {{#each user.roasts}}
+                <div class="card" style="width: 30rem;">
+                    <div class="card-body">
+                        <a href="/{{../user._id}}/roasts/{{id}}">
+                            <h3>{{content}}</h3>
+                        </a>
+                        <p>{{createdOn}}</p>
+                        <p> Has {{jabs.length}} Jabs</p>
+                    </div>
+                </div>
+                {{/each}}
             </div>
         </div>
-        {{/each}}
+        <div class="col">
+
+        </div>
     </div>
 </div>

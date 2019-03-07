@@ -3,9 +3,9 @@ const Roast = require('../models/Roast')
 const Jabs = require('../models/Jab')
 
 const jabController = {
-    index: (req, res) => {
-        res.send('Jabs')
-    },
+    // index: (req, res) => {
+    //     res.send('Jabs')
+    // },
     new: (req, res) => {
         Roast.findById(req.params.roastId)
             .then((roast) => {
@@ -28,21 +28,21 @@ const jabController = {
                 res.render('jabs/show', { jab })
             })
     },
-    edit: (req, res) => {
-        Jabs.findById(req.params.jabId).then((jab) => {
-            res.render('jabs/edit', { jab })
-        })
-    },
-    update: (req, res) => {
-        Roast.findById(req.params.roastId)
-        then((roast) => {
-            Jabs.findByIdAndUpdate(req.params.jabId, req.body, { new: true }).then((jab) => {
-                roast.jabs.push(jab)
-                roast.save()
-                res.redirect(`jabs/${req.params.jabId}`)
-            })
-        })
-    },
+    // edit: (req, res) => {
+    //     Jabs.findById(req.params.jabId).then((jab) => {
+    //         res.render('jabs/edit', { jab })
+    //     })
+    // },
+    // update: (req, res) => {
+    //     Roast.findById(req.params.roastId)
+    //     then((roast) => {
+    //         Jabs.findByIdAndUpdate(req.params.jabId, req.body, { new: true }).then((jab) => {
+    //             roast.jabs.push(jab)
+    //             roast.save()
+    //             res.redirect(`jabs/${req.params.jabId}`)
+    //         })
+    //     })
+    // },
     delete: (req, res) => {
         Jabs.findByIdAndDelete(req.params.jabId).then(() => {
             console.log(`deleted ${req.params.jabId}`)

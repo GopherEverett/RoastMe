@@ -1,26 +1,35 @@
 <div class="container">
-    <h2>{{../user.userName}}</h2>
-    <h2>{{roast.content}}</h2>
-    <a href="/{{roast._id}}/jabs/new" class="btn btn-primary">+ADD a Jab</a>
-    {{!-- <a href="{{roast._id}}?_method=DELETE" method="POST" class="btn btn-danger">-DELETE this roast</a> --}}
-    <a href="{{roast._id}}/edit" class="btn btn-info"> EDIT this Roast</a>
-    <form class="delete-form" action="{{roast._id}}?_method=DELETE" method="POST">
-        <input class="action-btn btn btn-danger" type="submit" value="DELETE this Roast">
-    </form>
-</div><br>
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <a href="/{{roast._id}}/jabs/new" class="btn btn-primary">+ADD a Jab</a>
+                <a href="{{roast._id}}/edit" class="btn btn-info"> EDIT this Roast</a>
+                <form class="delete-form" action="{{roast._id}}?_method=DELETE" method="POST">
+                    <input class="action-btn btn btn-danger" type="submit" value="DELETE this Roast">
+                </form>
+            </div>
 
-<div class="container">
-    <h3>Jabs:</h3>
-    {{#each roast.jabs}}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <a href="/{{../roast._id}}/jabs/{{id}}">
-                <h5 class="card-title">{{content}}</h5>
-            </a>
         </div>
-        <div>
-            <p class="card-text">{{createdOn}}</p>
+        <div class="col text-center">
+            <div class="card text-center" style="width: 30rem;">
+                <h2>{{../user.userName}}</h2>
+                <h2>{{roast.content}}</h2>
+            </div>
+            <h3>Jabs:</h3>
+
+            {{#each roast.jabs}}
+            <div class="card text-center" style="width: 30rem;">
+                <div class="card-body">
+                    <h4 class="card-title">{{content}}</h4>
+                </div>
+                <div>
+                    <p class="card-text">{{createdOn}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="col">
+
         </div>
     </div>
-    {{/each}}
 </div>
