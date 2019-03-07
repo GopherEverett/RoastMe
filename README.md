@@ -33,5 +33,6 @@ RoastMe is an online application for getting roasted and roasting others. Users 
 
 - Add user authentication
 - Ability to rate and rank Roasts and Jabs
+- Improve visual consistency
 
 
