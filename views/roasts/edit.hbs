@@ -1,0 +1,16 @@
+<div class="container">
+
+    <form action="{{../roast._id}}/jabs/{{jab._id}}?_method=PUT" method="POST">
+        <div>
+            <label for="">Update this Roast</label>
+        </div>
+        <div>
+
+            <input class="form-control" type="text" name="roast" id="roast" value="{{roast.content}}">
+        </div>
+        {{!-- <div>
+            <textarea name="content" id="content" cols="40" rows="5" value="{{jab.content}}"></textarea>
+        </div> --}}
+        <input type="submit" value="UPDATE" class="btn btn-danger">
+    </form>
+</div>

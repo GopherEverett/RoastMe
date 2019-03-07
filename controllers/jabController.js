@@ -41,14 +41,14 @@ const jabController = {
                 roast.save()
                 res.redirect(`jabs/${req.params.jabId}`)
             })
-         })
-        },
-            delete: (req, res) => {
-                Jabs.findByIdAndDelete(req.params.jabId).then(() => {
-                    console.log(`deleted ${req.params.jabId}`)
-                    res.redirect('/user')
-                })
-            }
+        })
+    },
+    delete: (req, res) => {
+        Jabs.findByIdAndDelete(req.params.jabId).then(() => {
+            console.log(`deleted ${req.params.jabId}`)
+            res.redirect('/user')
+        })
+    }
 }
 
 module.exports = jabController

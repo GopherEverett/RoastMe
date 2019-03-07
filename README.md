@@ -13,6 +13,7 @@ RoastMe is an online application for getting roasted and roasting others. Users 
 
 ### Technologies Utilized
 - HTML, CSS, and Javascript
+- Bootstrap CSS library
 - Node.js with Express 
 - MongoDB with Mongoose for database management
 - Handlebars for views
@@ -27,5 +28,10 @@ RoastMe is an online application for getting roasted and roasting others. Users 
 
 ### ERD
 <img src="https://github.com/GopherEverett/RoastMe/blob/master/public/images/RoastMe%20ERD.png">
+
+### Future Development
+
+- Add user authentication
+- Ability to rate and rank Roasts and Jabs
 
 

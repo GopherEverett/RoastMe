@@ -18,6 +18,8 @@ router.get('/:userId/roasts', roastController.index)
 router.get('/:userId/roasts/new', roastController.new)
 router.post('/:userId/roasts', roastController.create)
 router.get('/:userId/roasts/:roastId', roastController.show)
+router.get('/:userId/roasts/:roastId/edit', roastController.edit)
+router.put('/:userId/roasts/:roastId', roastController.update)
 router.delete('/:userId/roasts/:roastId', roastController.delete)
 //Jab routes
 router.get('/:roastId/jabs', jabController.index)
@@ -25,7 +27,7 @@ router.get('/:roastId/jabs/new', jabController.new)
 router.post('/:roastId/jabs', jabController.create)
 router.get('/:roastId/jabs/:jabId', jabController.show)
 router.get('/:roastId/jabs/:jabId/edit', jabController.edit)
-router.put('/:roastId/jabs/:jabId/', jabController.update)
+router.put('/:roastId/jabs/:jabId', jabController.update)
 router.delete('/:roastId/jabs/:jabId', jabController.delete)
 
 module.exports = router

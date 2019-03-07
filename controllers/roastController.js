@@ -29,8 +29,26 @@ const roastController = {
            res.render('roasts/show', {roast})
        })
     },
+    edit: (req, res) => {
+        Roast.findById(req.params.roastId).then((roast) => {
+            res.render('roasts/edit', { roast })
+        })
+    },
+    update: (req, res) => {
+        Roast.findById(req.params.roastId)
+        then((roast) => {
+            Jabs.findByIdAndUpdate(req.params.jabId, req.body, { new: true }).then((jab) => {
+                roast.jabs.push(jab)
+                roast.save()
+                res.redirect(`jabs/${req.params.jabId}`)
+            })
+        })
+    },
     delete: (req, res) => {
-        res.send('deleted Roast')
+        Roast.findByIdAndDelete(req.params.roastId).then(() => {
+            console.log(`deleted ${req.params.roastId}`)
+            res.redirect('/user')
+        })
     }
 }
 
