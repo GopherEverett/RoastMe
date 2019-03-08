@@ -1,6 +1,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-
+///For heroku connection
 if (process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI);
 }
@@ -12,10 +12,6 @@ mongoose.connection.on('error', function (err) {
     process.exit(-1);
 }
 );
-
-
-
-
 mongoose.connection.once('open', function() {
   console.log("MONGODB is now connected")
 

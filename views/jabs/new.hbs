@@ -1,12 +1,23 @@
 <div class="container">
-    
-    <form action="/{{roast._id}}/jabs" method="POST">
-        <div>
-            <label for="content">Keep it going...</label>
+    <div class="row">
+        <div class="col text-right">
+            <br>
+            <br>
+
         </div>
-        <div>
-            <textarea  class="form-control" name="content" id="content" cols="30" rows="3"></textarea>
+        <div class="col-8">
+            <form action="/{{roast._id}}/jabs" method="POST">
+                <div>
+                    <label for="content">Keep it going...</label>
+                </div>
+                <div>
+                    <textarea class="form-control" name="content" id="content" cols="20" rows="2"></textarea>
+                </div><br>
+                <input type="submit" value="Jab!" class="btn btn-danger">
+            </form>
         </div>
-        <input type="submit" value="Jab!" class="btn btn-danger">
-    </form>
+        <div class="col">
+
+        </div>
+    </div>
 </div>

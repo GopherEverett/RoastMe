@@ -1,10 +1,8 @@
 const User = require('../models/User')
-const Roasts = require('../models/Roast')
 
 const userController = {
     index: (req,res) => {
         User.find()
-        // .populate('roasts')
         .then(users => {
             res.render('users/index',{users})
         })
@@ -18,17 +16,10 @@ const userController = {
         })
     },
     show: (req,res) => {
-       User.findById(req.params.userId).populate('roasts')
+       User.findById(req.params.userId).populate('roasts') //populate with roasts to render in show page
        .then(user => {
            res.render('users/show', {user})
        })
     },
-    
-    // delete: (req,res) => {
-    //     User.findByIdAndDelete(req.params.userId).then(() => {
-    //         console.log(`deleted ${req.params.userId}`)
-    //         res.redirect('/')
-    //         })
-    // }
 }
 module.exports = userController 
