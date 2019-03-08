@@ -18,6 +18,17 @@ RoastMe is an online application for getting roasted and roasting others. Users 
 - MongoDB with Mongoose for database management
 - Handlebars for views
 
+### Features
+
+- See all users and the number of roasts on each
+- See individual users and their roasts listed
+- Jabs provide a thread to continue to add or comment on roasts
+- Add a new user
+- Add a new roast
+- Edit a roast
+- Delete a roast 
+- Add a new jab
+
 ### Wireframes
 #### User Index
 
