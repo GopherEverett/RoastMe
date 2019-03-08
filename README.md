@@ -12,6 +12,7 @@ RoastMe is an online application for getting roasted and roasting others. Users 
 - [Trello board](https://trello.com/b/VHN43nrQ/project-2-roast-app) 
 
 ### Technologies Utilized
+- Trello, Wireframe.cc, Lucidchart
 - HTML, CSS, and Javascript
 - Bootstrap CSS library
 - Node.js with Express 
