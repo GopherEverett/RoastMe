@@ -19,20 +19,32 @@ RoastMe is an online application for getting roasted and roasting others. Users 
 - Handlebars for views
 
 ### Wireframes
-## User Index
+#### User Index
+
 <img src="https://github.com/GopherEverett/RoastMe/blob/master/public/images/1-Homepage.png">
-## User Show 
+
+#### User Show 
+
 <img src="https://github.com/GopherEverett/RoastMe/blob/master/public/images/2-User.png">
-## User Add Form
+
+#### User Add Form
+
 <img src="https://github.com/GopherEverett/RoastMe/blob/master/public/images/4-User-add.png">
-## Roast Show with Jabs
+
+#### Roast Show with Jabs
+
 <img src="https://github.com/GopherEverett/RoastMe/blob/master/public/images/3-Jab.png">
-## Roast Add Form
+
+#### Roast Add Form
+
 <img src="https://github.com/GopherEverett/RoastMe/blob/master/public/images/5-Roast-add.png">
-##Jab Add Form
+
+#### Jab Add Form
+
 <img src="https://github.com/GopherEverett/RoastMe/blob/master/public/images/6-Jab-add.png">
 
 ### ERD
+
 <img src="https://github.com/GopherEverett/RoastMe/blob/master/public/images/RoastMe%20ERD.png">
 
 ### Future Development
