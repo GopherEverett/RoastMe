@@ -32,16 +32,17 @@ const roastController = {
     },
     update: (req, res) => {
         Roast.findByIdAndUpdate(req.params.roastId, req.body, { new: true }).then(() => {
-            console.log(req.params.roastId)
             res.redirect(`/user/${req.params.userId}`)
         })
     },
     delete: (req, res) => {
-        User.findById(req.params.userId).then((user) => {
-            user.roasts.filter(roastId => roastId !== req.params.roastId) //removes from users roast array
+        User.findById(req.params.userId).then((user) => {   //Delete from array in User
+            user.roasts.map((roast, index) => {
+                return roast == req.params.roastId ? user.roasts.splice(index, 1) : null
+            })
             user.save()
         })
-            .then(() => {
+            .then(() => {             //Delete from Roast collection
                 Roast.findByIdAndDelete(req.params.roastId).then(() => {
                     res.redirect(`/user/${req.params.userId}`)
                 })

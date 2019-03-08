@@ -1,4 +1,5 @@
 <div class="container">
+    <br>
     <div class="row">
         <div class="col">
 
@@ -6,12 +7,13 @@
         <div class="col-7">
         <form action="/{{user._id}}/roasts" method="POST">
             <div>
-                <label for="">Do Your Worst to {{user.userName}}</label>
+                <label class="text-white">Do Your Worst to {{user.userName}}...</label>
             </div>
             <div>
                 <textarea class="form-control" name="content" id="content" cols="45" rows="4"></textarea>
             </div>
-            <input type="submit" value="Roast!" class="btn btn-danger">
+            <br>
+            <input type="submit" value="Roast!" class="btn btn-warning">
         </form>
         </div>
         <div class="col">

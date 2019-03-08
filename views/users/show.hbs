@@ -1,23 +1,23 @@
 <div class="container">
+    <br>
     <div class="row">
         <div class="col">
             <div>
-                <br>
-                <a class="btn btn-dark" href="/{{user._id}}/roasts/new">Add a Roast</a>
+                <a class="btn btn-secondary" href="/{{user._id}}/roasts/new">Add a Roast</a>
             </div>
         </div>
-        <div class="col text-center">
+        <div class="col-md-8 text-center">
             {{!-- User image --}}
             <div>
-                <a href="/user"><img src="{{user.imgLink}}" alt=""></a>
+                <a href="/user"><img  class="img-thumbnail" src="{{user.imgLink}}" alt=""></a>
             </div>
             <div>
-                <h2>{{user.userName}}</h2>
+                <h2 class="text-white">{{user.userName}}</h2>
             </div>
             {{!-- Cards for each roast --}}
             <div>
                 {{#each user.roasts}}
-                <div class="card" style="width: 30rem;">
+                <div class="card w-90">
                     <div class="card-body">
                         <a href="/{{../user._id}}/roasts/{{id}}">
                             <h3>{{content}}</h3>

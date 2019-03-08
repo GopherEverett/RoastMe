@@ -1,5 +1,5 @@
 const User = require('../models/User')
-
+const Roasts = require('../models/Roast')
 const userController = {
     index: (req,res) => {
         User.find()

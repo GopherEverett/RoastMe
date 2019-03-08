@@ -6,12 +6,11 @@
         <div class="col-8">
             <form action="/{{userId}}/roasts/{{roast._id}}?_method=PUT" method="POST">
                 <div>
-                    <label for="">Update this Roast</label>
+                    <label  class="text-white" for="">Update this Roast</label>
                 </div>
                 <div>
-
-                    <input class="form-control" type="text" name="content" id="roast" value="{{roast.content}}">
-                    <input type="submit" value="UPDATE" class="btn btn-danger">
+                    <input class="form-control" type="text" name="content" id="roast" value="{{roast.content}}"><br>
+                    <input type="submit" value="UPDATE" class="btn btn-warning">
                 </div>
             </form>
         </div>
